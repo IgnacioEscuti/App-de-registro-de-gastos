@@ -1,4 +1,4 @@
-# CLAUDE.md — Auto Capital
+# CLAUDE.md — Capi
 
 Leé `PLAN.md` al empezar cada sesión: tiene la idea, el stack, el diseño y la etapa actual.
 
@@ -28,8 +28,9 @@ Leé `PLAN.md` al empezar cada sesión: tiene la idea, el stack, el diseño y la
 - SQL: tablas en plural, columnas en `snake_case`, plata en `NUMERIC`. Consultas siempre parametrizadas (`$1`, `$2`…). Cambios de esquema en `backend/schema.sql`.
 - Código (variables, funciones) en español, como en mis otros proyectos; columnas de la base en inglés.
 - Nunca subir `.env` ni secretos.
+- El código que exista solo para la versión web/PWA es provisorio: marcalo con un comentario `PROVISORIO-WEB` (en código y en archivos de config) para poder encontrarlo y borrarlo después.
 
 ## Diseño
 
-- Referencia visual en `docs/diseños/`. Respetá colores, tipografía y radios de la hoja de paleta.
+- Referencia visual en `docs/diseño/`. Respetá colores, tipografía y radios de la hoja de paleta.
 - Si una pantalla no está diseñada, preguntame antes de inventarla.

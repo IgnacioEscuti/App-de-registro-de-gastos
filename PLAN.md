@@ -1,4 +1,4 @@
-# PLAN — Auto Capital
+# PLAN — Capi
 
 App personal para registrar ingresos y egresos. Uso propio por ahora (quizás venderla a futuro). Solo mobile, solo pesos argentinos.
 
@@ -80,12 +80,29 @@ Basada en la de AnimalPiletas, adaptada a Postgres y mobile.
   - [x] Validación, email normalizado, rate limit, bloqueo 10 intentos / 2 min, 409 por `23505`.
   - [x] Middleware de errores central y 404 en JSON para rutas inexistentes.
   - [x] Contraseña de máximo 72 caracteres (límite de bcrypt).
-  - [ ] Probar contra la base real de Neon.
-- [ ] App: pantallas de Login y Registro según diseño, guardado del token.
+  - [x] Probar contra la base real de Neon.
+- [ ] App (`/app`, Expo SDK 57 + Expo Router, en JavaScript):
+  - [x] Proyecto creado con la plantilla por defecto, sin los ejemplos. Tema en `src/theme`.
+  - [x] `AuthContext` con `usuario`, `cargando`, `login`, `registro`, `logout`. Token en `expo-secure-store`; al abrir la app se valida con `GET /api/auth/actual`.
+  - [x] Cerrar sesión = borrar el token del teléfono (JWT stateless, sin endpoint).
+  - [x] Rutas protegidas con `Stack.Protected`: sin sesión solo `(auth)`, con sesión `(tabs)`.
+  - [x] Pantallas Login y Registro según diseño, con errores por campo y generales.
+  - [x] Inicio según diseño con datos de prueba en un solo archivo (`src/mocks/`), salvo el nombre del usuario, que es real.
+  - [x] Navbar glass con Inicio, Movimientos, Reportes y Ajustes + botón "+" (sin acción por ahora).
+  - [x] Movimientos y Reportes: pantallas vacías "Próximamente". Ajustes: solo "Cerrar sesión".
+  - [x] URL del back en `EXPO_PUBLIC_API_URL` (IP local de la PC en desarrollo).
+  - [ ] Probar en el iPhone con Expo Go contra el back local.
 
 ### Después de las pantallas principales
 - **Face ID** (`expo-local-authentication`): pedirlo al abrir la app y al volver de segundo plano tras más de 1 minuto. La contraseña se pide solo si el token venció, se cerró sesión o falla Face ID. Requiere development build (Expo Go no soporta Face ID en iPhone).
 - **Recuperar contraseña:** código de 6 dígitos por email, vence en 15 minutos. Columnas nuevas: `reset_code_hash`, `reset_code_expires_at` (con `ALTER TABLE`). Envío con Nodemailer + Gmail (contraseña de aplicación). Primero probar un mail desde Koyeb: si el SMTP está bloqueado, pasar a un servicio por API.
+
+### PWA provisoria (más adelante, después del deploy)
+Para usar Capi en el iPhone sin Expo Go ni cuenta de Apple, hasta pasar a la app nativa con TestFlight/App Store.
+- Versión web de la app (React Native Web) en Vercel, con rewrite de `/api` al back en Koyeb (como AnimalPiletas, sin CORS).
+- En el iPhone: Safari → Compartir → Agregar a pantalla de inicio. Ícono, manifest y meta tags de iOS para pantalla completa.
+- Token en web: `localStorage` (en nativo sigue `expo-secure-store`).
+- **Todo el código de la versión web es PROVISORIO y se elimina al pasar a la app nativa.** Cada parte va marcada con el comentario `PROVISORIO-WEB` para encontrarla y borrarla.
 
 ## Movimientos, reglas y sueldo (definido para más adelante)
 

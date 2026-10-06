@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0..1,0&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#111214;font-family:Outfit,system-ui,sans-serif;color:#F4F4F5;-webkit-font-smoothing:antialiased}
+a{color:#FF8A3D;text-decoration:none}a:hover{color:#FFB07A}
+input::placeholder{color:#76787E}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+</style>
+</helmet>
+<section style="padding:64px 72px 96px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#76787E;font-weight:600">Turno 3 · Auto Capital</div>
+    <div style="font-size:32px;font-weight:700;letter-spacing:-.02em">Login + Inicio · pizarra</div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
+
+    <div id="3a" style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="background:#FF8A3D;color:#1F0D00;font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px">3a</span><span style="color:#A1A3A8;font-size:15px;font-weight:500">Login</span></div>
+      <div data-screen-label="01 Login" style="width:390px;height:844px;border-radius:52px;overflow:hidden;position:relative;background:#1A1B1E;box-shadow:0 0 0 10px #2A2B2F,0 0 0 11px #3A3B40,0 40px 80px rgba(0,0,0,.5)">
+        <div style="position:absolute;left:0;right:0;top:0;height:460px;background:linear-gradient(180deg,rgba(255,138,61,.20) 0%,rgba(255,138,61,.06) 45%,rgba(26,27,30,0) 100%)"></div>
+        <div style="position:relative;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;font-weight:600;font-size:16px">
+          <span>9:41</span>
+          <div style="display:flex;gap:6px;align-items:center"><span style="width:18px;height:11px;border-radius:2px;background:#F4F4F5"></span><span style="width:26px;height:12px;border-radius:4px;border:1.5px solid rgba(244,244,245,.5);padding:1px;box-sizing:border-box;display:flex"><span style="flex:1;background:#F4F4F5;border-radius:2px"></span></span></div>
+        </div>
+        <div style="position:relative;padding:72px 24px 0;display:flex;flex-direction:column;height:790px;box-sizing:border-box">
+          <div style="display:flex;flex-direction:column;gap:22px;padding:0 4px;animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) both">
+            <div style="width:56px;height:56px;border-radius:18px;background:#FF8A3D;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(255,138,61,.35)">
+              <span style="font-family:'Material Symbols Rounded';font-size:30px;color:#1F0D00;font-variation-settings:'FILL' 1">trending_up</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:42px;font-weight:700;letter-spacing:-.03em;line-height:1">Auto Capital</div>
+              <div style="font-size:17px;color:#A1A3A8;font-weight:400;line-height:1.4;text-wrap:pretty">Tu plata, en orden. Ingresá para ver tus movimientos.</div>
+            </div>
+          </div>
+          <div style="margin-top:52px;border-radius:28px;background:#25262A;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;animation:fadeUp .7s .12s cubic-bezier(.2,.8,.2,1) both">
+            <div style="display:flex;align-items:center;gap:14px;padding:16px 18px">
+              <div style="width:40px;height:40px;border-radius:12px;background:#303136;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:21px;color:#A1A3A8">mail</span></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                <label style="font-size:12px;font-weight:500;color:#76787E">Email</label>
+                <input type="email" placeholder="tu@email.com" value="{{ email }}" onChange="{{ onEmail }}" style="background:transparent;border:none;outline:none;padding:0;color:#F4F4F5;font-family:Outfit;font-size:17px;font-weight:500;width:100%"/>
+              </div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.06);margin-left:72px"></div>
+            <div style="display:flex;align-items:center;gap:14px;padding:16px 10px 16px 18px">
+              <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,138,61,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:21px;color:#FF8A3D">lock</span></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                <label style="font-size:12px;font-weight:500;color:#FF8A3D">Contraseña</label>
+                <input type="{{ pwType }}" placeholder="••••••••" value="{{ pw }}" onChange="{{ onPw }}" style="background:transparent;border:none;outline:none;padding:0;color:#F4F4F5;font-family:Outfit;font-size:17px;font-weight:500;width:100%"/>
+              </div>
+              <button onClick="{{ togglePw }}" style="width:44px;height:44px;border-radius:12px;border:none;background:transparent;color:#A1A3A8;cursor:pointer;display:flex;align-items:center;justify-content:center" style-active="background:rgba(255,255,255,.06)">
+                <span style="font-family:'Material Symbols Rounded';font-size:22px">{{ pwIcon }}</span>
+              </button>
+            </div>
+          </div>
+          <div style="flex:1"></div>
+          <div style="display:flex;flex-direction:column;gap:18px;padding-bottom:44px;animation:fadeUp .7s .24s cubic-bezier(.2,.8,.2,1) both">
+            <button onClick="{{ login }}" style="height:60px;border-radius:999px;border:none;background:#FF8A3D;color:#1F0D00;font-family:Outfit;font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 14px 36px rgba(255,138,61,.28);transition:transform .15s ease" style-active="transform:scale(.97)">
+              <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+                <span style="width:20px;height:20px;border-radius:50%;border:2.5px solid rgba(31,13,0,.25);border-top-color:#1F0D00;animation:spin .7s linear infinite"></span>
+              </sc-if>
+              <span>{{ loginLabel }}</span>
+            </button>
+            <div style="display:flex;justify-content:center;gap:5px;font-size:15px;color:#A1A3A8">¿No tenés cuenta?<a href="#3d" style="color:#FF8A3D;font-weight:600">Registrate</a></div>
+            <div style="text-align:center;font-size:13px;color:#76787E">Tus datos se guardan solo en tu cuenta.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="3d" style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="background:#FF8A3D;color:#1F0D00;font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px">3d</span><span style="color:#A1A3A8;font-size:15px;font-weight:500">Registro · con error en email</span></div>
+      <div data-screen-label="03 Registro" style="width:390px;height:844px;border-radius:52px;overflow:hidden;position:relative;background:#1A1B1E;box-shadow:0 0 0 10px #2A2B2F,0 0 0 11px #3A3B40,0 40px 80px rgba(0,0,0,.5)">
+        <div style="position:absolute;left:0;right:0;top:0;height:460px;background:linear-gradient(180deg,rgba(255,138,61,.20) 0%,rgba(255,138,61,.06) 45%,rgba(26,27,30,0) 100%)"></div>
+        <div style="position:relative;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;font-weight:600;font-size:16px">
+          <span>9:41</span>
+          <div style="display:flex;gap:6px;align-items:center"><span style="width:18px;height:11px;border-radius:2px;background:#F4F4F5"></span><span style="width:26px;height:12px;border-radius:4px;border:1.5px solid rgba(244,244,245,.5);padding:1px;box-sizing:border-box;display:flex"><span style="flex:1;background:#F4F4F5;border-radius:2px"></span></span></div>
+        </div>
+        <div style="position:relative;padding:56px 24px 0;display:flex;flex-direction:column;height:790px;box-sizing:border-box">
+          <div style="display:flex;flex-direction:column;gap:22px;padding:0 4px;animation:fadeUp .7s cubic-bezier(.2,.8,.2,1) both">
+            <div style="width:56px;height:56px;border-radius:18px;background:#FF8A3D;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 36px rgba(255,138,61,.35)">
+              <span style="font-family:'Material Symbols Rounded';font-size:30px;color:#1F0D00;font-variation-settings:'FILL' 1">trending_up</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:42px;font-weight:700;letter-spacing:-.03em;line-height:1">Auto Capital</div>
+              <div style="font-size:17px;color:#A1A3A8;font-weight:400;line-height:1.4;text-wrap:pretty">Creá tu cuenta y empezá a ordenar tu plata.</div>
+            </div>
+          </div>
+          <div style="margin-top:40px;border-radius:28px;background:#25262A;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;animation:fadeUp .7s .12s cubic-bezier(.2,.8,.2,1) both">
+            <div style="display:flex;align-items:center;gap:14px;padding:16px 18px">
+              <div style="width:40px;height:40px;border-radius:12px;background:#303136;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:21px;color:#A1A3A8">person</span></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                <label style="font-size:12px;font-weight:500;color:#76787E">Nombre</label>
+                <input type="text" placeholder="Tu nombre" value="{{ regName }}" onChange="{{ onRegName }}" style="background:transparent;border:none;outline:none;padding:0;color:#F4F4F5;font-family:Outfit;font-size:17px;font-weight:500;width:100%"/>
+              </div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.06);margin-left:72px"></div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:16px 18px;background:rgba(255,77,94,.06)">
+              <div style="display:flex;align-items:center;gap:14px">
+                <div style="width:40px;height:40px;border-radius:12px;background:rgba(255,77,94,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:21px;color:#FF4D5E">mail</span></div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <label style="font-size:12px;font-weight:500;color:#FF4D5E">Email</label>
+                  <input type="email" placeholder="tu@email.com" value="{{ regEmail }}" onChange="{{ onRegEmail }}" style="background:transparent;border:none;outline:none;padding:0;color:#F4F4F5;font-family:Outfit;font-size:17px;font-weight:500;width:100%"/>
+                </div>
+                <span style="font-family:'Material Symbols Rounded';font-size:22px;color:#FF4D5E;font-variation-settings:'FILL' 1">error</span>
+              </div>
+              <div style="font-size:13px;color:#FF4D5E;padding-left:54px">Este email ya está registrado.</div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,.06);margin-left:72px"></div>
+            <div style="display:flex;flex-direction:column;gap:8px;padding:16px 10px 16px 18px">
+              <div style="display:flex;align-items:center;gap:14px">
+                <div style="width:40px;height:40px;border-radius:12px;background:#303136;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-family:'Material Symbols Rounded';font-size:21px;color:#A1A3A8">lock</span></div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <label style="font-size:12px;font-weight:500;color:#76787E">Contraseña</label>
+                  <input type="{{ regPwType }}" placeholder="••••••••" value="{{ regPw }}" onChange="{{ onRegPw }}" style="background:transparent;border:none;outline:none;padding:0;color:#F4F4F5;font-family:Outfit;font-size:17px;font-weight:500;width:100%"/>
+                </div>
+                <button onClick="{{ toggleRegPw }}" style="width:44px;height:44px;border-radius:12px;border:none;background:transparent;color:#A1A3A8;cursor:pointer;display:flex;align-items:center;justify-content:center" style-active="background:rgba(255,255,255,.06)">
+                  <span style="font-family:'Material Symbols Rounded';font-size:22px">{{ regPwIcon }}</span>
+                </button>
+              </div>
+              <div style="font-size:13px;color:#76787E;padding-left:54px">Mínimo 8 caracteres</div>
+            </div>
+          </div>
+          <div style="flex:1"></div>
+          <div style="display:flex;flex-direction:column;gap:18px;padding-bottom:44px;animation:fadeUp .7s .24s cubic-bezier(.2,.8,.2,1) both">
+            <button onClick="{{ register }}" style="height:60px;border-radius:999px;border:none;background:#FF8A3D;color:#1F0D00;font-family:Outfit;font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 14px 36px rgba(255,138,61,.28);transition:transform .15s ease" style-active="transform:scale(.97)">
+              <sc-if value="{{ regLoading }}" hint-placeholder-val="{{ false }}">
+                <span style="width:20px;height:20px;border-radius:50%;border:2.5px solid rgba(31,13,0,.25);border-top-color:#1F0D00;animation:spin .7s linear infinite"></span>
+              </sc-if>
+              <span>{{ regLabel }}</span>
+            </button>
+            <div style="display:flex;justify-content:center;gap:5px;font-size:15px;color:#A1A3A8">¿Ya tenés cuenta?<a href="#3a" style="color:#FF8A3D;font-weight:600">Ingresá</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="3b" style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="background:#FF8A3D;color:#1F0D00;font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px">3b</span><span style="color:#A1A3A8;font-size:15px;font-weight:500">Inicio</span></div>
+      <div data-screen-label="02 Inicio" style="width:390px;height:844px;border-radius:52px;overflow:hidden;position:relative;background:#1A1B1E;box-shadow:0 0 0 10px #2A2B2F,0 0 0 11px #3A3B40,0 40px 80px rgba(0,0,0,.5)">
+        <div style="position:absolute;inset:0;overflow-y:auto;scrollbar-width:none">
+          <div style="position:absolute;left:0;right:0;top:0;height:460px;background:linear-gradient(180deg,rgba(255,138,61,.20) 0%,rgba(255,138,61,.06) 45%,rgba(26,27,30,0) 100%)"></div>
+          <div style="position:relative;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 32px 0 40px;font-weight:600;font-size:16px">
+            <span>9:41</span>
+            <div style="display:flex;gap:6px;align-items:center"><span style="width:18px;height:11px;border-radius:2px;background:#F4F4F5"></span><span style="width:26px;height:12px;border-radius:4px;border:1.5px solid rgba(244,244,245,.5);padding:1px;box-sizing:border-box;display:flex"><span style="flex:1;background:#F4F4F5;border-radius:2px"></span></span></div>
+          </div>
+          <div style="position:relative;padding:12px 16px 130px;display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:0 8px;animation:fadeUp .6s cubic-bezier(.2,.8,.2,1) both">
+              <div style="display:flex;align-items:baseline;gap:8px">
+                <span style="font-size:28px;font-weight:700;letter-spacing:-.02em">Hola, Tomás</span>
+                <span style="font-size:17px;font-weight:500;color:#76787E">2 oct</span>
+              </div>
+              <div style="width:44px;height:44px;border-radius:50%;background:#303136;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px">TM</div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:4px;padding:48px 8px 36px;animation:fadeUp .7s .08s cubic-bezier(.2,.8,.2,1) both">
+              <div style="font-size:15px;font-weight:500;color:#A1A3A8">Saldo total</div>
+              <div style="display:flex;align-items:baseline;gap:4px;font-variant-numeric:tabular-nums">
+                <span style="font-size:30px;font-weight:600;color:#F4F4F5">$</span>
+                <span style="font-size:60px;font-weight:700;letter-spacing:-.035em;line-height:1.05;color:#F4F4F5">{{ balInt }}</span>
+                <span style="font-size:26px;font-weight:600;color:rgba(244,244,245,.5)">,{{ balDec }}</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:15px;font-weight:500;margin-top:2px">
+                <span style="font-family:'Material Symbols Rounded';font-size:18px;color:#3DDC84">arrow_upward</span>
+                <span style="color:#3DDC84;font-variant-numeric:tabular-nums">$ 1.391.673,50</span>
+                <span style="color:#76787E">este mes</span>
+              </div>
+            </div>
+
+            <sc-if value="{{ showMonthCard }}" hint-placeholder-val="{{ true }}">
+              <div style="border-radius:28px;background:#25262A;border:1px solid rgba(255,255,255,.06);padding:20px;display:flex;flex-direction:column;gap:16px;animation:fadeUp .7s .16s cubic-bezier(.2,.8,.2,1) both">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:17px;font-weight:600">Este mes</div>
+                  <div style="font-size:14px;color:#76787E">Octubre 2026</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="display:flex;align-items:center;gap:6px;font-size:14px;color:#A1A3A8"><span style="width:8px;height:8px;border-radius:50%;background:#3DDC84"></span>Ingresos</div>
+                    <div style="font-size:20px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums">$ 1.475.000</div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="display:flex;align-items:center;gap:6px;font-size:14px;color:#A1A3A8"><span style="width:8px;height:8px;border-radius:50%;background:#FF4D5E"></span>Egresos</div>
+                    <div style="font-size:20px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums">$ 83.326,50</div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="height:10px;border-radius:999px;background:#36373C;overflow:hidden">
+                    <div style="width:5.6%;height:100%;min-width:10px;background:#FF4D5E;border-radius:999px;transform-origin:left;animation:growX .9s .45s cubic-bezier(.2,.8,.2,1) both"></div>
+                  </div>
+                  <div style="font-size:14px;color:#76787E">Gastaste el 5,6 % de lo que ingresó.</div>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:32px 8px 12px;animation:fadeUp .6s .22s cubic-bezier(.2,.8,.2,1) both">
+              <div style="font-size:21px;font-weight:600;letter-spacing:-.01em">Últimos movimientos</div>
+              <a href="#" style="font-size:15px;font-weight:500">Ver todos</a>
+            </div>
+            <div style="border-radius:28px;background:#25262A;border:1px solid rgba(255,255,255,.06);padding:4px 0;display:flex;flex-direction:column">
+              <sc-for list="{{ movs }}" as="m" hint-placeholder-count="7">
+                <div style="display:flex;flex-direction:column;animation:fadeUp .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:{{ m.delay }}">
+                  <sc-if value="{{ m.sep }}" hint-placeholder-val="{{ false }}">
+                    <div style="height:1px;background:rgba(255,255,255,.06);margin-left:72px;margin-right:16px"></div>
+                  </sc-if>
+                  <div style="display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer;transition:background .15s ease" style-active="background:rgba(255,255,255,.04)">
+                    <div style="width:42px;height:42px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#303136;color:#C8CACE">
+                      <span style="font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1">{{ m.icon }}</span>
+                    </div>
+                    <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                      <div style="font-size:16px;font-weight:500;line-height:1.25;text-wrap:pretty">{{ m.title }}</div>
+                      <div style="font-size:13px;color:#76787E">{{ m.cat }} · {{ m.date }}</div>
+                    </div>
+                    <div style="font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;color:{{ m.color }}">{{ m.amount }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:16px;right:16px;bottom:28px;display:flex;gap:10px;align-items:center;animation:fadeUp .7s .3s cubic-bezier(.2,.8,.2,1) both">
+          <div style="flex:1;height:66px;border-radius:999px;background:rgba(48,49,54,.55);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 16px 36px rgba(0,0,0,.35);position:relative;display:flex;padding:5px;box-sizing:border-box">
+            <div style="position:absolute;top:5px;bottom:5px;width:{{ tabW }};left:{{ pillLeft }};border-radius:999px;background:rgba(255,255,255,.10);transition:left .38s cubic-bezier(.3,1.3,.5,1)"></div>
+            <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+              <button onClick="{{ t.onClick }}" style="flex:1;position:relative;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-family:Outfit;transition:transform .15s ease;color:{{ t.color }}" style-active="transform:scale(.92)">
+                <span style="font-family:'Material Symbols Rounded';font-size:24px;font-variation-settings:{{ t.fill }}">{{ t.icon }}</span>
+                <span style="font-size:11px;font-weight:500">{{ t.label }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <button aria-label="Agregar movimiento" style="width:62px;height:62px;border-radius:50%;border:none;background:#FF8A3D;color:#1F0D00;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 12px 30px rgba(255,138,61,.4);transition:transform .15s ease" style-active="transform:scale(.9)">
+            <span style="font-family:'Material Symbols Rounded';font-size:32px;font-variation-settings:'wght' 600">add</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="3c" style="display:flex;flex-direction:column;gap:16px;width:440px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="background:#FF8A3D;color:#1F0D00;font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px">3c</span><span style="color:#A1A3A8;font-size:15px;font-weight:500">Paleta y tipografía</span></div>
+      <div style="border-radius:32px;background:#1A1B1E;border:1px solid rgba(255,255,255,.06);padding:32px;display:flex;flex-direction:column;gap:32px">
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#76787E;font-weight:600">Color</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <sc-for list="{{ palette }}" as="c" hint-placeholder-count="12">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="width:44px;height:44px;border-radius:14px;flex-shrink:0;border:1px solid rgba(255,255,255,.1);background:{{ c.v }}"></div>
+                <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                  <div style="font-size:14px;font-weight:600">{{ c.n }}</div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#A1A3A8">{{ c.h }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#76787E;font-weight:600">Tipografía · Outfit</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:44px;font-weight:700;letter-spacing:-.035em;line-height:1">$ 2.384</span><span style="font-family:'JetBrains Mono';font-size:11px;color:#A1A3A8">Display 60/700 · −3.5%</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:28px;font-weight:700;letter-spacing:-.02em">Hola, Tomás</span><span style="font-family:'JetBrains Mono';font-size:11px;color:#A1A3A8">Título 28–42/700</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:21px;font-weight:600">Últimos movimientos</span><span style="font-family:'JetBrains Mono';font-size:11px;color:#A1A3A8">Sección 21/600</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:16px;font-weight:500">Supermercado Coto</span><span style="font-family:'JetBrains Mono';font-size:11px;color:#A1A3A8">Cuerpo 16/500</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-size:13px;color:#76787E">Comida · Hoy</span><span style="font-family:'JetBrains Mono';font-size:11px;color:#A1A3A8">Meta 13/400</span></div>
+          </div>
+          <div style="font-size:13px;color:#A1A3A8;line-height:1.5;text-wrap:pretty">Paquete <span style="font-family:'JetBrains Mono'">@expo-google-fonts/outfit</span>. Montos con <span style="font-family:'JetBrains Mono'">fontVariant: ['tabular-nums']</span>. Títulos de movimientos: <span style="font-family:'JetBrains Mono'">numberOfLines={2}</span>.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#76787E;font-weight:600">Forma y movimiento</div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;color:#A1A3A8;line-height:1.5">
+            <div>Radios: tarjeta 28 · ícono 13 · botón/nav 999. Separador 1px blanco 6 %, con sangría desde el ícono.</div>
+            <div>Navbar: <span style="font-family:'JetBrains Mono'">BlurView</span> (expo-blur) tint "dark", intensidad 50, sobre #303136 al 55 % + borde blanco 10 %.</div>
+            <div>Resplandor: <span style="font-family:'JetBrains Mono'">LinearGradient</span> naranja 20 % → transparente, 460px arriba.</div>
+            <div>Animación (Reanimated): entrada fade + subir 14px, 550ms, escalonado 60ms · tap: escala 0.97 · navbar: spring.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showMonthCard&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { bal: 0, tab: 0, loading: false, showPw: false, email: 'tomas.m@gmail.com', pw: 'capital2026' };
+  TARGET = 2384150.32;
+  componentDidMount() {
+    const start = performance.now(), dur = 1400;
+    const step = now => {
+      const p = Math.min(1, (now - start) / dur), e = 1 - Math.pow(1 - p, 4);
+      this.setState({ bal: this.TARGET * e });
+      if (p < 1) this.raf = requestAnimationFrame(step);
+    };
+    this.raf = requestAnimationFrame(step);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearTimeout(this.t); }
+  fmt(n) { return n.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+  renderVals() {
+    const raw = [
+      ['payments', 'Sueldo octubre', 'Sueldo', 'Hoy', 1450000],
+      ['shopping_cart', 'Supermercado Coto', 'Comida', 'Hoy', -48326.5],
+      ['local_gas_station', 'Nafta YPF Av. Libertador', 'Transporte', 'Ayer', -35000],
+      ['call_received', 'Transferencia de Julieta Fernández', 'Transferencias', '30 sep', 25000],
+      ['home', 'Alquiler departamento', 'Vivienda', '30 sep', -420000],
+      ['play_circle', 'Netflix', 'Suscripciones', '29 sep', -8999],
+      ['local_cafe', 'Café Martínez', 'Comida', '28 sep', -3200],
+    ];
+    const movs = raw.map(([icon, title, cat, date, v], i) => ({
+      icon, title, cat, date, sep: i > 0,
+      amount: (v > 0 ? '+ $ ' : '− $ ') + this.fmt(Math.abs(v)),
+      color: v > 0 ? '#3DDC84' : '#FF4D5E',
+      delay: (0.3 + i * 0.06).toFixed(2) + 's',
+    }));
+    const tabs = [['home', 'Inicio'], ['receipt_long', 'Movimientos'], ['bar_chart', 'Reportes'], ['settings', 'Ajustes']].map(([icon, label], i) => {
+      const on = i === this.state.tab;
+      return { icon, label, color: on ? '#FF8A3D' : '#A1A3A8', fill: on ? "'FILL' 1" : "'FILL' 0", onClick: () => this.setState({ tab: i }) };
+    });
+    const [bi, bd] = this.fmt(this.state.bal).split(',');
+    const s = this.state;
+    return {
+      regName: s.regName ?? 'Tomás Martínez', regEmail: s.regEmail ?? 'tomas.m@gmail.com', regPw: s.regPw ?? 'capital2026',
+      onRegName: e => this.setState({ regName: e.target.value }),
+      onRegEmail: e => this.setState({ regEmail: e.target.value }),
+      onRegPw: e => this.setState({ regPw: e.target.value }),
+      regPwType: s.showRegPw ? 'text' : 'password',
+      regPwIcon: s.showRegPw ? 'visibility_off' : 'visibility',
+      toggleRegPw: () => this.setState(p => ({ showRegPw: !p.showRegPw })),
+      regLoading: !!s.regLoading,
+      regLabel: s.regLoading ? 'Creando cuenta…' : 'Crear cuenta',
+      register: () => { if (s.regLoading) return; this.setState({ regLoading: true }); this.t2 = setTimeout(() => this.setState({ regLoading: false }), 1600); },
+      balInt: bi, balDec: bd, movs, tabs,
+      tabW: 'calc((100% - 10px) / 4)',
+      pillLeft: `calc(5px + (100% - 10px) / 4 * ${this.state.tab})`,
+      showMonthCard: this.props.showMonthCard ?? true,
+      email: this.state.email, pw: this.state.pw,
+      onEmail: e => this.setState({ email: e.target.value }),
+      onPw: e => this.setState({ pw: e.target.value }),
+      pwType: this.state.showPw ? 'text' : 'password',
+      pwIcon: this.state.showPw ? 'visibility_off' : 'visibility',
+      togglePw: () => this.setState(s => ({ showPw: !s.showPw })),
+      loading: this.state.loading,
+      loginLabel: this.state.loading ? 'Ingresando…' : 'Ingresar',
+      login: () => { if (this.state.loading) return; this.setState({ loading: true }); this.t = setTimeout(() => this.setState({ loading: false }), 1600); },
+      palette: [
+        { n: 'Fondo', h: '#1A1B1E', v: '#1A1B1E' },
+        { n: 'Tarjeta', h: '#25262A', v: '#25262A' },
+        { n: 'Ícono / elevado', h: '#303136', v: '#303136' },
+        { n: 'Pista barra', h: '#36373C', v: '#36373C' },
+        { n: 'Borde / separador', h: 'rgba(255,255,255,.06)', v: 'rgba(255,255,255,.06)' },
+        { n: 'Navbar glass', h: 'rgba(48,49,54,.55)', v: 'rgba(48,49,54,.55)' },
+        { n: 'Texto', h: '#F4F4F5', v: '#F4F4F5' },
+        { n: 'Texto 2', h: '#A1A3A8', v: '#A1A3A8' },
+        { n: 'Texto 3', h: '#76787E', v: '#76787E' },
+        { n: 'Acento', h: '#FF8A3D', v: '#FF8A3D' },
+        { n: 'Ingreso', h: '#3DDC84', v: '#3DDC84' },
+        { n: 'Egreso', h: '#FF4D5E', v: '#FF4D5E' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
