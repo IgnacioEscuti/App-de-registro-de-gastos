@@ -74,7 +74,13 @@ Basada en la de AnimalPiletas, adaptada a Postgres y mobile.
 ## Etapas
 
 ### Etapa 1 — Registro + login ⬅ actual
-- [ ] Back: conexión a Neon con `pg`, `schema.sql`, endpoints de registro, login y usuario actual.
+- [x] Back: conexión a Neon con `pg`, `schema.sql`, endpoints de registro, login y usuario actual.
+  - [x] `POST /api/auth/registro`, `POST /api/auth/login`, `GET /api/auth/actual` (Bearer token).
+  - [x] Passport (`registro`, `login`, `actual`), bcryptjs, JWT de 30 días, DTO sin `password_hash`.
+  - [x] Validación, email normalizado, rate limit, bloqueo 10 intentos / 2 min, 409 por `23505`.
+  - [x] Middleware de errores central y 404 en JSON para rutas inexistentes.
+  - [x] Contraseña de máximo 72 caracteres (límite de bcrypt).
+  - [ ] Probar contra la base real de Neon.
 - [ ] App: pantallas de Login y Registro según diseño, guardado del token.
 
 ### Después de las pantallas principales
